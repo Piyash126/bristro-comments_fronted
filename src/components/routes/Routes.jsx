@@ -41,7 +41,7 @@ export const router = createBrowserRouter([
         path: "viewItem/:id",
         element: <ViewItem></ViewItem>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/menu/${params.id}`),
+          fetch(`${import.meta.env.VITE_baseURL}/menu/${params.id}`),
       },
 
       {
@@ -123,7 +123,7 @@ export const router = createBrowserRouter([
           </AdminRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/menu/${params.id}`),
+          fetch(`${import.meta.env.VITE_baseURL}/menu/${params.id}`),
       },
     ],
   },
